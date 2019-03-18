@@ -4,18 +4,42 @@
 #
 Name     : R-DendSer
 Version  : 1.0.1
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/DendSer_1.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DendSer_1.0.1.tar.gz
 Summary  : Dendrogram seriation: ordering for visualisation
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-DendSer-lib
+Requires: R-DendSer-lib = %{version}-%{release}
+Requires: R-DEoptimR
+Requires: R-bitops
+Requires: R-diptest
+Requires: R-flexmix
 Requires: R-gclus
+Requires: R-kernlab
+Requires: R-mclust
+Requires: R-modeltools
+Requires: R-mvtnorm
+Requires: R-prabclus
+Requires: R-robustbase
 Requires: R-seriation
+Requires: R-trimcluster
+Requires: R-viridis
+BuildRequires : R-DEoptimR
+BuildRequires : R-bitops
+BuildRequires : R-diptest
+BuildRequires : R-flexmix
 BuildRequires : R-gclus
+BuildRequires : R-kernlab
+BuildRequires : R-mclust
+BuildRequires : R-modeltools
+BuildRequires : R-mvtnorm
+BuildRequires : R-prabclus
+BuildRequires : R-robustbase
 BuildRequires : R-seriation
-BuildRequires : clr-R-helpers
+BuildRequires : R-trimcluster
+BuildRequires : R-viridis
+BuildRequires : buildreq-R
 
 %description
 No detailed description available
@@ -36,11 +60,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523299631
+export SOURCE_DATE_EPOCH=1552906044
 
 %install
+export SOURCE_DATE_EPOCH=1552906044
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523299631
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -75,8 +99,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library DendSer|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  DendSer || :
 
 
 %files
@@ -105,7 +128,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/DendSer/help/paths.rds
 /usr/lib64/R/library/DendSer/html/00Index.html
 /usr/lib64/R/library/DendSer/html/R.css
-/usr/lib64/R/library/DendSer/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
