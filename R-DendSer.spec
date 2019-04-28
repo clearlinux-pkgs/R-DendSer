@@ -4,41 +4,49 @@
 #
 Name     : R-DendSer
 Version  : 1.0.1
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/DendSer_1.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DendSer_1.0.1.tar.gz
 Summary  : Dendrogram seriation: ordering for visualisation
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-DendSer-lib = %{version}-%{release}
-Requires: R-DEoptimR
-Requires: R-bitops
-Requires: R-diptest
-Requires: R-flexmix
-Requires: R-gclus
-Requires: R-kernlab
-Requires: R-mclust
-Requires: R-modeltools
-Requires: R-mvtnorm
-Requires: R-prabclus
-Requires: R-robustbase
-Requires: R-seriation
-Requires: R-trimcluster
-Requires: R-viridis
+Requires: R-TSP
+Requires: R-caTools
+Requires: R-dendextend
+Requires: R-fpc
+Requires: R-gdata
+Requires: R-ggplot2
+Requires: R-gplots
+Requires: R-gridExtra
+Requires: R-gtools
+Requires: R-registry
+Requires: R-whisker
 BuildRequires : R-DEoptimR
+BuildRequires : R-TSP
 BuildRequires : R-bitops
+BuildRequires : R-caTools
+BuildRequires : R-dendextend
 BuildRequires : R-diptest
 BuildRequires : R-flexmix
+BuildRequires : R-fpc
 BuildRequires : R-gclus
+BuildRequires : R-gdata
+BuildRequires : R-ggplot2
+BuildRequires : R-gplots
+BuildRequires : R-gridExtra
+BuildRequires : R-gtools
 BuildRequires : R-kernlab
 BuildRequires : R-mclust
 BuildRequires : R-modeltools
 BuildRequires : R-mvtnorm
 BuildRequires : R-prabclus
+BuildRequires : R-registry
 BuildRequires : R-robustbase
 BuildRequires : R-seriation
 BuildRequires : R-trimcluster
 BuildRequires : R-viridis
+BuildRequires : R-whisker
 BuildRequires : buildreq-R
 
 %description
@@ -60,10 +68,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552906044
+export SOURCE_DATE_EPOCH=1556471967
 
 %install
-export SOURCE_DATE_EPOCH=1552906044
+export SOURCE_DATE_EPOCH=1556471967
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -99,7 +107,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  DendSer || :
+R CMD check --no-manual --no-examples --no-codoc DendSer || :
 
 
 %files
