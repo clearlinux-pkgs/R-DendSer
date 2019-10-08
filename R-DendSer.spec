@@ -4,7 +4,7 @@
 #
 Name     : R-DendSer
 Version  : 1.0.1
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/DendSer_1.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DendSer_1.0.1.tar.gz
 Summary  : Dendrogram seriation: ordering for visualisation
@@ -36,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562086122
+export SOURCE_DATE_EPOCH=1570565180
 
 %install
-export SOURCE_DATE_EPOCH=1562086122
+export SOURCE_DATE_EPOCH=1570565180
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -109,4 +109,3 @@ R CMD check --no-manual --no-examples --no-codoc DendSer || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/DendSer/libs/DendSer.so
 /usr/lib64/R/library/DendSer/libs/DendSer.so.avx2
-/usr/lib64/R/library/DendSer/libs/DendSer.so.avx512
