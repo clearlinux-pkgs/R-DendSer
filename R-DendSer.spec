@@ -4,7 +4,7 @@
 #
 Name     : R-DendSer
 Version  : 1.0.2
-Release  : 56
+Release  : 57
 URL      : https://cran.r-project.org/src/contrib/DendSer_1.0.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DendSer_1.0.2.tar.gz
 Summary  : Dendrogram Seriation: Ordering for Visualisation
